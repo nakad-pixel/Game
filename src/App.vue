@@ -9,6 +9,8 @@
     <CharacterSelect v-if="uiStore.activeModal === 'characters'" />
     <AchievementGrid v-if="uiStore.activeModal === 'achievements'" />
     <NotificationContainer />
+    <DebugPanel />
+    <TutorialOverlay />
   </div>
 </template>
 
@@ -29,6 +31,8 @@ import ShopMenu from '@/components/ShopMenu.vue'
 import CharacterSelect from '@/components/CharacterSelect.vue'
 import AchievementGrid from '@/components/AchievementGrid.vue'
 import NotificationContainer from '@/components/NotificationContainer.vue'
+import DebugPanel from '@/components/DebugPanel.vue'
+import TutorialOverlay from '@/components/TutorialOverlay.vue'
 
 const gameStore = useGameStore()
 const uiStore = useUIStore()
@@ -51,6 +55,9 @@ onMounted(async () => {
   }, 1000)
 
   startGameLoop()
+  
+  // Keyboard shortcut for debug panel (Ctrl+Shift+D)
+  window.addEventListener('keydown', handleKeyPress)
 })
 
 onUnmounted(() => {
@@ -59,7 +66,16 @@ onUnmounted(() => {
   }
   persistenceSystem.save()
   persistenceSystem.destroy()
+  window.removeEventListener('keydown', handleKeyPress)
 })
+
+function handleKeyPress(event: KeyboardEvent) {
+  // Ctrl+Shift+D to toggle debug panel
+  if (event.ctrlKey && event.shiftKey && event.key === 'D') {
+    event.preventDefault()
+    uiStore.toggleDebug()
+  }
+}
 
 function startGameLoop() {
   const loop = (currentTime: number) => {
