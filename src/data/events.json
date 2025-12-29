@@ -1,0 +1,37 @@
+[
+  {
+    "id": "monster_surge",
+    "name": "Monster Surge",
+    "description": "Enemies drop 2x gold!",
+    "multipliers": { "gold": 2 },
+    "duration": 172800000
+  },
+  {
+    "id": "double_xp",
+    "name": "Training Intensive",
+    "description": "Gain 2x XP from all sources!",
+    "multipliers": { "xp": 2 },
+    "duration": 172800000
+  },
+  {
+    "id": "trait_madness",
+    "name": "Trait Madness",
+    "description": "Trait rerolls cost 50% less!",
+    "multipliers": {},
+    "duration": 86400000
+  },
+  {
+    "id": "damage_boost",
+    "name": "Power Surge",
+    "description": "Deal 1.5x damage!",
+    "multipliers": { "damage": 1.5 },
+    "duration": 86400000
+  },
+  {
+    "id": "mega_weekend",
+    "name": "Mega Weekend",
+    "description": "All rewards 3x!",
+    "multipliers": { "gold": 3, "xp": 3, "damage": 1.5 },
+    "duration": 172800000
+  }
+]

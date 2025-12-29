@@ -1,0 +1,219 @@
+[
+  {
+    "id": "berserker",
+    "name": "Berserker Rage",
+    "description": "+25% damage",
+    "rarity": "common",
+    "effect": { "type": "damage", "value": 1.25 }
+  },
+  {
+    "id": "wealthy",
+    "name": "Golden Touch",
+    "description": "+30% gold earned",
+    "rarity": "common",
+    "effect": { "type": "gold", "value": 1.3 }
+  },
+  {
+    "id": "scholar",
+    "name": "Scholar's Mind",
+    "description": "+30% XP gained",
+    "rarity": "common",
+    "effect": { "type": "xp", "value": 1.3 }
+  },
+  {
+    "id": "swift",
+    "name": "Swift Strike",
+    "description": "+20% attack speed",
+    "rarity": "common",
+    "effect": { "type": "attackSpeed", "value": 1.2 }
+  },
+  {
+    "id": "critical_eye",
+    "name": "Critical Eye",
+    "description": "+10% crit chance",
+    "rarity": "common",
+    "effect": { "type": "critChance", "value": 0.1 }
+  },
+  {
+    "id": "titan",
+    "name": "Titan's Endurance",
+    "description": "+50% max health",
+    "rarity": "rare",
+    "effect": { "type": "health", "value": 1.5 }
+  },
+  {
+    "id": "savage",
+    "name": "Savage Fury",
+    "description": "+50% damage",
+    "rarity": "rare",
+    "effect": { "type": "damage", "value": 1.5 }
+  },
+  {
+    "id": "fortune",
+    "name": "Fortune's Favor",
+    "description": "+60% gold earned",
+    "rarity": "rare",
+    "effect": { "type": "gold", "value": 1.6 }
+  },
+  {
+    "id": "mastermind",
+    "name": "Mastermind",
+    "description": "+60% XP gained",
+    "rarity": "rare",
+    "effect": { "type": "xp", "value": 1.6 }
+  },
+  {
+    "id": "lightning",
+    "name": "Lightning Reflexes",
+    "description": "+40% attack speed",
+    "rarity": "rare",
+    "effect": { "type": "attackSpeed", "value": 1.4 }
+  },
+  {
+    "id": "assassin",
+    "name": "Assassin's Precision",
+    "description": "+15% crit chance",
+    "rarity": "rare",
+    "effect": { "type": "critChance", "value": 0.15 }
+  },
+  {
+    "id": "colossus",
+    "name": "Colossus",
+    "description": "+100% max health",
+    "rarity": "epic",
+    "effect": { "type": "health", "value": 2.0 }
+  },
+  {
+    "id": "destroyer",
+    "name": "Destroyer",
+    "description": "+100% damage",
+    "rarity": "epic",
+    "effect": { "type": "damage", "value": 2.0 }
+  },
+  {
+    "id": "midas",
+    "name": "Midas Touch",
+    "description": "+100% gold earned",
+    "rarity": "epic",
+    "effect": { "type": "gold", "value": 2.0 }
+  },
+  {
+    "id": "sage",
+    "name": "Ancient Sage",
+    "description": "+100% XP gained",
+    "rarity": "epic",
+    "effect": { "type": "xp", "value": 2.0 }
+  },
+  {
+    "id": "godspeed",
+    "name": "Godspeed",
+    "description": "+80% attack speed",
+    "rarity": "epic",
+    "effect": { "type": "attackSpeed", "value": 1.8 }
+  },
+  {
+    "id": "deadeye",
+    "name": "Deadeye",
+    "description": "+25% crit chance",
+    "rarity": "epic",
+    "effect": { "type": "critChance", "value": 0.25 }
+  },
+  {
+    "id": "immortal",
+    "name": "Immortal Soul",
+    "description": "+200% max health",
+    "rarity": "legendary",
+    "effect": { "type": "health", "value": 3.0 }
+  },
+  {
+    "id": "obliterator",
+    "name": "Obliterator",
+    "description": "+200% damage",
+    "rarity": "legendary",
+    "effect": { "type": "damage", "value": 3.0 }
+  },
+  {
+    "id": "infinite_wealth",
+    "name": "Infinite Wealth",
+    "description": "+200% gold earned",
+    "rarity": "legendary",
+    "effect": { "type": "gold", "value": 3.0 }
+  },
+  {
+    "id": "enlightened",
+    "name": "Enlightened",
+    "description": "+200% XP gained",
+    "rarity": "legendary",
+    "effect": { "type": "xp", "value": 3.0 }
+  },
+  {
+    "id": "time_warp",
+    "name": "Time Warp",
+    "description": "+150% attack speed",
+    "rarity": "legendary",
+    "effect": { "type": "attackSpeed", "value": 2.5 }
+  },
+  {
+    "id": "perfect_aim",
+    "name": "Perfect Aim",
+    "description": "+40% crit chance",
+    "rarity": "legendary",
+    "effect": { "type": "critChance", "value": 0.4 }
+  },
+  {
+    "id": "balanced_power",
+    "name": "Balanced Power",
+    "description": "+35% to all stats",
+    "rarity": "epic",
+    "effect": { "type": "damage", "value": 1.35 }
+  },
+  {
+    "id": "warrior_spirit",
+    "name": "Warrior's Spirit",
+    "description": "+40% damage, +20% health",
+    "rarity": "rare",
+    "effect": { "type": "damage", "value": 1.4 }
+  },
+  {
+    "id": "combo_master",
+    "name": "Combo Master",
+    "description": "+30% attack speed, +15% crit",
+    "rarity": "epic",
+    "effect": { "type": "attackSpeed", "value": 1.3 }
+  },
+  {
+    "id": "treasure_hunter",
+    "name": "Treasure Hunter",
+    "description": "+50% gold, +20% XP",
+    "rarity": "rare",
+    "effect": { "type": "gold", "value": 1.5 }
+  },
+  {
+    "id": "veteran",
+    "name": "Veteran Warrior",
+    "description": "+20% all stats",
+    "rarity": "common",
+    "effect": { "type": "damage", "value": 1.2 }
+  },
+  {
+    "id": "focus",
+    "name": "Laser Focus",
+    "description": "+50% crit damage",
+    "rarity": "rare",
+    "effect": { "type": "critChance", "value": 0.08 }
+  },
+  {
+    "id": "momentum",
+    "name": "Building Momentum",
+    "description": "+25% attack speed",
+    "rarity": "common",
+    "effect": { "type": "attackSpeed", "value": 1.25 }
+  },
+  {
+    "id": "greed",
+    "name": "Endless Greed",
+    "description": "+80% gold",
+    "rarity": "epic",
+    "effect": { "type": "gold", "value": 1.8 }
+  }
+]

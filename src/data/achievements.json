@@ -1,0 +1,107 @@
+[
+  {
+    "id": "first_kill",
+    "name": "First Blood",
+    "description": "Defeat your first enemy",
+    "condition": { "type": "enemiesDefeated", "target": 1 },
+    "reward": { "type": "gold", "value": 100 }
+  },
+  {
+    "id": "level_10",
+    "name": "Getting Started",
+    "description": "Reach level 10",
+    "condition": { "type": "level", "target": 10 },
+    "reward": { "type": "gems", "value": 10 }
+  },
+  {
+    "id": "level_25",
+    "name": "Rising Hero",
+    "description": "Reach level 25",
+    "condition": { "type": "level", "target": 25 },
+    "reward": { "type": "gems", "value": 25 }
+  },
+  {
+    "id": "level_50",
+    "name": "Master Warrior",
+    "description": "Reach level 50",
+    "condition": { "type": "level", "target": 50 },
+    "reward": { "type": "gems", "value": 50 }
+  },
+  {
+    "id": "first_ascension",
+    "name": "Ascended",
+    "description": "Complete your first ascension",
+    "condition": { "type": "ascensions", "target": 1 },
+    "reward": { "type": "gems", "value": 100 }
+  },
+  {
+    "id": "ascension_10",
+    "name": "Ascension Master",
+    "description": "Complete 10 ascensions",
+    "condition": { "type": "ascensions", "target": 10 },
+    "reward": { "type": "skin", "value": "aura_blue" }
+  },
+  {
+    "id": "wave_100",
+    "name": "Century Mark",
+    "description": "Reach wave 100",
+    "condition": { "type": "wave", "target": 100 },
+    "reward": { "type": "gems", "value": 150 }
+  },
+  {
+    "id": "wave_500",
+    "name": "Legendary Survivor",
+    "description": "Reach wave 500",
+    "condition": { "type": "wave", "target": 500 },
+    "reward": { "type": "skin", "value": "aura_golden" }
+  },
+  {
+    "id": "gold_millionaire",
+    "name": "Millionaire",
+    "description": "Earn 1,000,000 total gold",
+    "condition": { "type": "totalGoldEarned", "target": 1000000 },
+    "reward": { "type": "gems", "value": 200 }
+  },
+  {
+    "id": "gold_billionaire",
+    "name": "Billionaire",
+    "description": "Earn 1,000,000,000 total gold",
+    "condition": { "type": "totalGoldEarned", "target": 1000000000 },
+    "reward": { "type": "skin", "value": "theme_golden" }
+  },
+  {
+    "id": "streak_7",
+    "name": "Dedicated Player",
+    "description": "Login 7 days in a row",
+    "condition": { "type": "dailyStreak", "target": 7 },
+    "reward": { "type": "gems", "value": 100 }
+  },
+  {
+    "id": "all_characters",
+    "name": "Complete Roster",
+    "description": "Unlock all characters",
+    "condition": { "type": "charactersUnlocked", "target": 4 },
+    "reward": { "type": "gems", "value": 250 }
+  },
+  {
+    "id": "trait_collector",
+    "name": "Trait Collector",
+    "description": "Unlock 10 traits",
+    "condition": { "type": "traitsUnlocked", "target": 10 },
+    "reward": { "type": "gems", "value": 150 }
+  },
+  {
+    "id": "battle_pass_complete",
+    "name": "Pass Master",
+    "description": "Complete the battle pass",
+    "condition": { "type": "battlePassTier", "target": 30 },
+    "reward": { "type": "skin", "value": "ultimate_aura" }
+  },
+  {
+    "id": "ad_watcher",
+    "name": "Supporter",
+    "description": "Watch 50 ads",
+    "condition": { "type": "adsWatched", "target": 50 },
+    "reward": { "type": "gems", "value": 100 }
+  }
+]
