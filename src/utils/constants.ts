@@ -122,4 +122,28 @@ export const ANALYTICS_EVENTS = {
   CHARACTER_UNLOCKED: 'character_unlocked',
   TRAIT_UNLOCKED: 'trait_unlocked',
   BATTLE_PASS_TIER: 'battle_pass_tier',
+  QUEST_COMPLETED: 'quest_completed',
+  CLAN_JOINED: 'clan_joined',
+  SKILL_USED: 'skill_used',
+}
+
+export const EVENTS = {
+  ROTATION_INTERVAL: 604800000, // 7 days
+  PROGRESS_UPDATE_INTERVAL: 60000, // 1 minute
+}
+
+export const CLANS = {
+  CREATE_COST: 10000,
+  MAX_MEMBERS: 50,
+  DONATION_COOLDOWN: 3600000, // 1 hour
+}
+
+export const SKILLS = {
+  COOLDOWN_REDUCTION_BASE: 0,
+  MAX_SKILL_LEVEL: 50,
+}
+
+export const SOCIAL = {
+  MAX_FRIENDS: 100,
+  GIFT_COOLDOWN: 86400000, // 24 hours
 }

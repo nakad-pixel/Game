@@ -1,0 +1,46 @@
+[
+  {
+    "id": "striker",
+    "name": "Flame Warrior",
+    "role": "striker",
+    "baseDamage": 15,
+    "baseHealth": 100,
+    "attackSpeed": 1.2,
+    "specialAbility": "power_strike",
+    "spriteKey": "char_striker",
+    "unlockedAt": 1
+  },
+  {
+    "id": "guardian",
+    "name": "Shield Maiden",
+    "role": "guardian",
+    "baseDamage": 10,
+    "baseHealth": 200,
+    "attackSpeed": 0.8,
+    "specialAbility": "holy_shield",
+    "spriteKey": "char_guardian",
+    "unlockedAt": 10
+  },
+  {
+    "id": "mystic",
+    "name": "Arcane Sage",
+    "role": "mystic",
+    "baseDamage": 20,
+    "baseHealth": 80,
+    "attackSpeed": 1.0,
+    "specialAbility": "arcane_blast",
+    "spriteKey": "char_mystic",
+    "unlockedAt": 25
+  },
+  {
+    "id": "legendary",
+    "name": "Shadow Assassin",
+    "role": "legendary",
+    "baseDamage": 35,
+    "baseHealth": 120,
+    "attackSpeed": 1.5,
+    "specialAbility": "shadow_step",
+    "spriteKey": "char_legendary",
+    "unlockedAt": 50
+  }
+]

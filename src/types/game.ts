@@ -7,6 +7,10 @@ export interface GameState {
   achievements: AchievementState
   settings: SettingsState
   meta: MetaState
+  skills: SkillState
+  quests: QuestState
+  clans: ClanState
+  social: SocialState
 }
 
 export interface PlayerState {
@@ -129,6 +133,67 @@ export interface MetaState {
   lastCloudSyncTime: number
 }
 
+export interface SkillState {
+  unlockedSkills: string[]
+  skillLevels: Record<string, number>
+  activeSkills: string[]
+  skillCooldowns: Record<string, number>
+}
+
+export interface QuestState {
+  dailyQuests: Quest[]
+  weeklyQuests: Quest[]
+  lastRefreshDate: string
+}
+
+export interface Quest {
+  id: string
+  name: string
+  description: string
+  type: 'daily' | 'weekly'
+  condition: {
+    type: string
+    target: number
+  }
+  progress: number
+  reward: Reward
+  completed: boolean
+  claimed: boolean
+}
+
+export interface ClanState {
+  currentClanId: string | null
+  clanName: string | null
+  role: 'leader' | 'officer' | 'member' | null
+  members: ClanMember[]
+  treasury: {
+    gold: number
+    gems: number
+  }
+}
+
+export interface ClanMember {
+  id: string
+  name: string
+  role: 'leader' | 'officer' | 'member'
+  contribution: number
+  lastActive: number
+}
+
+export interface SocialState {
+  friends: string[]
+  pendingRequests: string[]
+  sentRequests: string[]
+  giftsReceived: Gift[]
+}
+
+export interface Gift {
+  fromId: string
+  fromName: string
+  reward: Reward
+  timestamp: number
+}
+
 export interface Character {
   id: string
   name: string
@@ -175,8 +240,62 @@ export interface BattlePassTier {
 }
 
 export interface Reward {
-  type: 'gold' | 'gems' | 'skin' | 'boost' | 'reroll'
+  type: 'gold' | 'gems' | 'skin' | 'boost' | 'reroll' | 'trait'
   value: string | number
+}
+
+export interface Skill {
+  id: string
+  characterId: string
+  name: string
+  description: string
+  baseValue: number
+  scaling: number
+  cooldown: number
+  unlockedAt: number
+}
+
+export interface Cosmetic {
+  id: string
+  name: string
+  type: 'skin' | 'pet' | 'aura' | 'weapon'
+  rarity: 'common' | 'rare' | 'epic' | 'legendary'
+  bonus?: {
+    type: string
+    value: number
+  }
+}
+
+export interface Clan {
+  id: string
+  name: string
+  leaderId: string
+  members: string[]
+  perks: Record<string, number>
+}
+
+export interface PrestigeTier {
+  id: number
+  name: string
+  multiplier: number
+  unlockRequirement: number
+}
+
+export interface CloudSave {
+  userId: string
+  gameState: GameState
+  timestamp: number
+  version: string
+}
+
+export interface PurchaseTransaction {
+  id: string
+  userId: string
+  productId: string
+  amount: number
+  currency: string
+  status: 'pending' | 'completed' | 'failed' | 'refunded'
+  timestamp: number
 }
 
 export interface LeaderboardEntry {

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "skin_default",
+    "name": "Original",
+    "type": "skin",
+    "rarity": "common"
+  },
+  {
+    "id": "skin_fire_warrior",
+    "name": "Fire Warrior",
+    "type": "skin",
+    "rarity": "rare",
+    "bonus": { "type": "damage", "value": 1.1 }
+  },
+  {
+    "id": "pet_dragon",
+    "name": "Baby Dragon",
+    "type": "pet",
+    "rarity": "epic",
+    "bonus": { "type": "gold", "value": 1.2 }
+  },
+  {
+    "id": "aura_golden",
+    "name": "Golden Aura",
+    "type": "aura",
+    "rarity": "legendary",
+    "bonus": { "type": "xp", "value": 1.5 }
+  }
+]

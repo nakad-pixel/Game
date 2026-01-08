@@ -9,11 +9,13 @@ interface DamageNumber {
   timestamp: number
 }
 
-interface Notification {
+export interface Notification {
   id: string
+  title?: string
   message: string
-  type: 'info' | 'success' | 'warning' | 'error'
+  type: 'info' | 'success' | 'warning' | 'error' | 'achievement'
   timestamp: number
+  duration: number
 }
 
 interface UIState {
@@ -60,18 +62,17 @@ export const useUIStore = defineStore('ui', {
       }, 1000)
     },
 
-    addNotification(message: string, type: 'info' | 'success' | 'warning' | 'error' = 'info') {
+    addNotification(notificationData: Omit<Notification, 'id' | 'timestamp'>) {
       const notification: Notification = {
         id: `notif_${Date.now()}_${Math.random()}`,
-        message,
-        type,
+        ...notificationData,
         timestamp: Date.now(),
       }
       this.notifications.push(notification)
 
       setTimeout(() => {
         this.notifications = this.notifications.filter(n => n.id !== notification.id)
-      }, 3000)
+      }, notification.duration || 3000)
     },
 
     setLoading(loading: boolean) {
