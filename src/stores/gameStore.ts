@@ -91,6 +91,33 @@ export const useGameStore = defineStore('game', {
       cloudsyncEnabled: false,
       lastCloudSyncTime: 0,
     },
+    skills: {
+      unlockedSkills: [],
+      skillLevels: {},
+      activeSkills: [],
+      skillCooldowns: {},
+    },
+    quests: {
+      dailyQuests: [],
+      weeklyQuests: [],
+      lastRefreshDate: new Date().toISOString().split('T')[0],
+    },
+    clans: {
+      currentClanId: null,
+      clanName: null,
+      role: null,
+      members: [],
+      treasury: {
+        gold: 0,
+        gems: 0,
+      },
+    },
+    social: {
+      friends: [],
+      pendingRequests: [],
+      sentRequests: [],
+      giftsReceived: [],
+    },
   }),
 
   getters: {

@@ -1,0 +1,16 @@
+{
+  "skins": [
+    { "id": "skin_default", "price": 0, "currency": "gold" },
+    { "id": "skin_fire_warrior", "price": 100, "currency": "gems" },
+    { "id": "skin_ice_mage", "price": 150, "currency": "gems" },
+    { "id": "skin_shadow_rogue", "price": 200, "currency": "gems" }
+  ],
+  "pets": [
+    { "id": "pet_cat", "price": 50, "currency": "gems" },
+    { "id": "pet_dragon", "price": 500, "currency": "gems" }
+  ],
+  "auras": [
+    { "id": "aura_basic", "price": 25, "currency": "gems" },
+    { "id": "aura_golden", "price": 1000, "currency": "gems" }
+  ]
+}

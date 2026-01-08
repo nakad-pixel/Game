@@ -1,0 +1,34 @@
+[
+  {
+    "id": "daily_enemies_50",
+    "name": "Enemy Slayer",
+    "description": "Defeat 50 enemies today.",
+    "type": "daily",
+    "condition": { "type": "enemiesDefeated", "target": 50 },
+    "reward": { "type": "gold", "value": 1000 }
+  },
+  {
+    "id": "daily_level_5",
+    "name": "Gaining Power",
+    "description": "Level up 5 times today.",
+    "type": "daily",
+    "condition": { "type": "levelUps", "target": 5 },
+    "reward": { "type": "gems", "value": 10 }
+  },
+  {
+    "id": "weekly_ascend_3",
+    "name": "Serial Ascender",
+    "description": "Ascend 3 times this week.",
+    "type": "weekly",
+    "condition": { "type": "ascensions", "target": 3 },
+    "reward": { "type": "gems", "value": 50 }
+  },
+  {
+    "id": "weekly_wave_500",
+    "name": "Wave Pusher",
+    "description": "Reach wave 500 this week.",
+    "type": "weekly",
+    "condition": { "type": "wave", "target": 500 },
+    "reward": { "type": "trait", "value": "random_epic" }
+  }
+]

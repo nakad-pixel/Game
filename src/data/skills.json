@@ -1,0 +1,42 @@
+[
+  {
+    "id": "power_strike",
+    "characterId": "striker",
+    "name": "Power Strike",
+    "description": "A powerful blow that deals 200% damage.",
+    "baseValue": 2,
+    "scaling": 0.2,
+    "cooldown": 5000,
+    "unlockedAt": 1
+  },
+  {
+    "id": "flame_slash",
+    "characterId": "striker",
+    "name": "Flame Slash",
+    "description": "Ignites the enemy, dealing damage over time.",
+    "baseValue": 1.5,
+    "scaling": 0.3,
+    "cooldown": 8000,
+    "unlockedAt": 10
+  },
+  {
+    "id": "holy_shield",
+    "characterId": "guardian",
+    "name": "Holy Shield",
+    "description": "Reduces incoming damage by 50% for 5 seconds.",
+    "baseValue": 0.5,
+    "scaling": 0.05,
+    "cooldown": 15000,
+    "unlockedAt": 1
+  },
+  {
+    "id": "arcane_blast",
+    "characterId": "mystic",
+    "name": "Arcane Blast",
+    "description": "Blasts the enemy with pure energy.",
+    "baseValue": 3,
+    "scaling": 0.5,
+    "cooldown": 10000,
+    "unlockedAt": 1
+  }
+]
