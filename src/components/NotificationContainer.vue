@@ -7,7 +7,8 @@
         class="notification"
         :class="notification.type"
       >
-        {{ notification.message }}
+        <div v-if="notification.title" class="notification-title">{{ notification.title }}</div>
+        <div class="notification-message">{{ notification.message }}</div>
       </div>
     </transition-group>
   </div>
@@ -56,6 +57,22 @@ const uiStore = useUIStore()
 
 .notification.error {
   background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.notification.achievement {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  border: 2px solid #fff;
+}
+
+.notification-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
+.notification-message {
+  font-size: 1rem;
 }
 
 .notification-enter-active,

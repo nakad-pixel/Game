@@ -1,6 +1,8 @@
 import { useGameStore } from '@/stores/gameStore'
 import { useUIStore } from '@/stores/uiStore'
 import { renderingSystem } from './RenderingSystem'
+import { audioSystem } from './AudioSystem'
+import { particleSystem } from './ParticleSystem'
 
 export class CombatSystem {
   private gameStore: any
@@ -27,9 +29,15 @@ export class CombatSystem {
 
     this.gameStore.attack()
     renderingSystem.animateAttack()
+    audioSystem.playAttack()
     
     if (this.gameStore.combat.currentEnemy) {
       renderingSystem.animateHit(this.gameStore.effectiveDamage)
+      particleSystem.createDamagePop(
+        window.innerWidth / 2 + 150, 
+        window.innerHeight / 2, 
+        Math.random() < this.gameStore.player.critChance
+      )
     }
   }
 }
