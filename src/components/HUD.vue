@@ -19,6 +19,7 @@
     </div>
 
     <div class="center-info" v-if="gameStore.combat.currentEnemy">
+      <EventNotification />
       <div class="enemy-info">
         <div class="enemy-name">{{ gameStore.combat.currentEnemy.name }}</div>
         <div class="health-bar">
@@ -43,6 +44,10 @@
       </div>
     </div>
 
+    <div class="skill-overlay">
+      <SkillDisplay />
+    </div>
+
     <div class="bottom-bar">
       <button class="menu-btn" @click="openModal('progression')">
         🔼 Ascension
@@ -52,6 +57,9 @@
       </button>
       <button class="menu-btn" @click="openModal('shop')">
         🛒 Shop
+      </button>
+      <button class="menu-btn" @click="openModal('social')">
+        🤝 Social
       </button>
       <button class="menu-btn" @click="openModal('achievements')">
         🏆 Achievements
@@ -70,6 +78,8 @@
 import { useGameStore } from '@/stores/gameStore'
 import { useUIStore } from '@/stores/uiStore'
 import { formatNumber } from '@/utils/formulas'
+import EventNotification from './EventNotification.vue'
+import SkillDisplay from './SkillDisplay.vue'
 
 const gameStore = useGameStore()
 const uiStore = useUIStore()
@@ -224,6 +234,14 @@ function openModal(name: string) {
   text-align: center;
   font-size: 0.85rem;
   color: #ccc;
+}
+
+.skill-overlay {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 .bottom-bar {

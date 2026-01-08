@@ -1,6 +1,7 @@
 import { useGameStore } from '@/stores/gameStore'
 import { useUIStore } from '@/stores/uiStore'
 import { calculateAscensionCost } from '@/utils/formulas'
+import { audioSystem } from './AudioSystem'
 
 export class ProgressionSystem {
   private gameStore: any
@@ -22,6 +23,7 @@ export class ProgressionSystem {
     const cost = calculateAscensionCost(this.gameStore.progression.totalAscensions)
     this.gameStore.player.gold -= cost
     this.gameStore.ascend()
+    audioSystem.playAscension()
     
     this.uiStore.addNotification(`Ascended! Multiplier: ${this.gameStore.progression.ascensionMultiplier.toFixed(2)}x`, 'success')
   }

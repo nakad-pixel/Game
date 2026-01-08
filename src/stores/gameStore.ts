@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { GameState } from '@/types/game'
+import { useUIStore } from './uiStore'
 import { GAME_CONFIG, BALANCE, CHARACTERS } from '@/utils/constants'
 import { 
   calculateXPForLevel, 
@@ -342,6 +343,14 @@ export const useGameStore = defineStore('game', {
         if (unlocked) {
           this.achievements.unlockedAchievements.push(achievement.id)
           analytics.trackEvent('achievement_unlocked', { achievementId: achievement.id })
+          
+          const uiStore = useUIStore()
+          uiStore.addNotification({
+            title: 'Achievement Unlocked!',
+            message: achievement.name,
+            type: 'achievement',
+            duration: 4000
+          })
         }
       })
     },

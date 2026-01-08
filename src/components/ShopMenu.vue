@@ -69,39 +69,11 @@
       </div>
 
       <div class="shop-content" v-if="activeTab === 'cosmetics'">
-        <div class="cosmetics-grid">
-          <div class="cosmetic-card" v-for="skin in skins" :key="skin.id">
-            <div class="cosmetic-preview">{{ skin.emoji }}</div>
-            <div class="cosmetic-name">{{ skin.name }}</div>
-            <button 
-              class="buy-btn"
-              :disabled="gameStore.monetization.ownedSkins.includes(skin.id)"
-              @click="purchaseSkin(skin)"
-            >
-              {{ gameStore.monetization.ownedSkins.includes(skin.id) ? 'Owned' : `${skin.gems} 💎` }}
-            </button>
-          </div>
-        </div>
+        <CosmeticShop />
       </div>
 
       <div class="shop-content" v-if="activeTab === 'battlepass'">
-        <div class="battlepass-info">
-          <h3>Premium Battle Pass</h3>
-          <p>Unlock premium rewards for all 30 tiers!</p>
-          <div class="battlepass-benefits">
-            <div>✨ 30 Premium Rewards</div>
-            <div>💎 Over 1,500 Gems Value</div>
-            <div>🎨 Exclusive Skins</div>
-            <div>⚡ Permanent Boosts</div>
-          </div>
-          <button 
-            class="buy-battlepass-btn"
-            :disabled="gameStore.monetization.battlePassPremium"
-            @click="purchaseBattlePass"
-          >
-            {{ gameStore.monetization.battlePassPremium ? 'Already Owned' : 'Buy for $2.99' }}
-          </button>
-        </div>
+        <BattlePassUI />
       </div>
 
       <button class="close-btn" @click="close">Close</button>
@@ -113,6 +85,8 @@
 import { ref } from 'vue'
 import { useGameStore } from '@/stores/gameStore'
 import { useUIStore } from '@/stores/uiStore'
+import CosmeticShop from './CosmeticShop.vue'
+import BattlePassUI from './BattlePassUI.vue'
 
 const gameStore = useGameStore()
 const uiStore = useUIStore()

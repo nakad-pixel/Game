@@ -3,7 +3,32 @@
     <div class="modal-content" @click.stop>
       <h2>Ascension & Progression</h2>
 
-      <div class="ascension-section">
+      <div class="tabs">
+        <button 
+          class="tab" 
+          :class="{ active: activeTab === 'ascension' }"
+          @click="activeTab = 'ascension'"
+        >
+          🔼 Ascension
+        </button>
+        <button 
+          class="tab" 
+          :class="{ active: activeTab === 'skills' }"
+          @click="activeTab = 'skills'"
+        >
+          ⚔️ Skills
+        </button>
+        <button 
+          class="tab" 
+          :class="{ active: activeTab === 'prestige' }"
+          @click="activeTab = 'prestige'"
+        >
+          ✨ Prestige
+        </button>
+      </div>
+
+      <div v-if="activeTab === 'ascension'">
+        <div class="ascension-section">
         <div class="stat-box">
           <div class="stat-label">Total Ascensions</div>
           <div class="stat-value">{{ gameStore.progression.totalAscensions }}</div>
@@ -61,21 +86,32 @@
         </button>
       </div>
 
+      <div v-if="activeTab === 'skills'">
+        <CharacterSkillTree />
+      </div>
+
+      <div v-if="activeTab === 'prestige'">
+        <PrestigePanel />
+      </div>
+
       <button class="close-btn" @click="close">Close</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useGameStore } from '@/stores/gameStore'
 import { useUIStore } from '@/stores/uiStore'
 import { progressionSystem } from '@/systems/ProgressionSystem'
 import { calculateAscensionCost, formatNumber } from '@/utils/formulas'
 import traitsData from '@/data/traits.json'
+import CharacterSkillTree from './CharacterSkillTree.vue'
+import PrestigePanel from './PrestigePanel.vue'
 
 const gameStore = useGameStore()
 const uiStore = useUIStore()
+const activeTab = ref('ascension')
 
 const ascensionCost = computed(() => calculateAscensionCost(gameStore.progression.totalAscensions))
 const canAscend = computed(() => progressionSystem.canAscend())
@@ -143,6 +179,28 @@ h2 {
   text-align: center;
   color: #4a90e2;
   font-size: 1.8rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #4a90e2, #3498db);
+  color: white;
 }
 
 h3 {
