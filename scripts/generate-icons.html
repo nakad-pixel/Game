@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Game Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #4a90e2;
+            margin: 20px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #3498db;
+        }
+        .instructions {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 Idle Anime Ascension - Icon Generator</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click the buttons below to generate icons</li>
+            <li>Right-click on each canvas and "Save image as..."</li>
+            <li>Save as <code>icon-192.png</code> and <code>icon-512.png</code></li>
+            <li>Place the files in the <code>public/</code> folder</li>
+        </ol>
+    </div>
+
+    <h2>192x192 Icon</h2>
+    <canvas id="icon192" width="192" height="192"></canvas>
+    <br>
+    <button onclick="generateIcon(192)">Generate 192x192</button>
+    <button onclick="downloadIcon(192)">Download 192x192</button>
+
+    <h2>512x512 Icon</h2>
+    <canvas id="icon512" width="512" height="512"></canvas>
+    <br>
+    <button onclick="generateIcon(512)">Generate 512x512</button>
+    <button onclick="downloadIcon(512)">Download 512x512</button>
+
+    <script>
+        function generateIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#0f0f1e');
+            gradient.addColorStop(1, '#1a1a2e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Circle background
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size*0.4, 0, Math.PI * 2);
+            const circleGradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size*0.4);
+            circleGradient.addColorStop(0, '#4a90e2');
+            circleGradient.addColorStop(1, '#2980b9');
+            ctx.fillStyle = circleGradient;
+            ctx.fill();
+            
+            // Anime-style star
+            ctx.save();
+            ctx.translate(size/2, size/2);
+            ctx.fillStyle = '#ffffff';
+            
+            const points = 5;
+            const outerRadius = size * 0.25;
+            const innerRadius = size * 0.12;
+            
+            ctx.beginPath();
+            for (let i = 0; i < points * 2; i++) {
+                const angle = (Math.PI / points) * i - Math.PI / 2;
+                const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.closePath();
+            ctx.fill();
+            
+            // Add glow effect
+            ctx.shadowColor = '#ffffff';
+            ctx.shadowBlur = size * 0.05;
+            ctx.fill();
+            
+            ctx.restore();
+            
+            // Text "IA" for Idle Anime
+            ctx.font = `bold ${size * 0.2}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillText('IA', size/2, size/2);
+            
+            // Border
+            ctx.strokeStyle = '#4a90e2';
+            ctx.lineWidth = size * 0.02;
+            ctx.strokeRect(0, 0, size, size);
+        }
+        
+        function downloadIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        // Generate icons on page load
+        window.onload = () => {
+            generateIcon(192);
+            generateIcon(512);
+        };
+    </script>
+</body>
+</html>
